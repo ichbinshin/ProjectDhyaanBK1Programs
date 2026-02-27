@@ -1,1 +1,15 @@
+Idea 1: Determine whether slow and fast gamma support distinct directed network architecture:
+Dataset : LFP(Monkey dataset) #(Most probably)
+Toolbox: MATLAB: FieldTrip + Chronux
+  Step 1:Preprocessing data to reduce noise.
+  Step 2:Time frequency decomposition:
+    Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
+  Step 3: Get burst onset times per electrode 
+    (either from data if already calculated or use custom hilbert transform)
+  Step 4:
+Idea 2: Test whether slow gamma phase entrains fast gamma phase:
 
+   Step 4:
+    For each burst extract window[-200 ms,+300ms] and separate into slow and fast burst
+  Step 5: Make directed GC matrix per band.
+    Use fieldtrip analysis with mvar to fit mvar model,compute spectral GC 
