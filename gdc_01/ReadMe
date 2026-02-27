@@ -6,9 +6,24 @@ Toolbox: MATLAB: FieldTrip + Chronux
     Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
   Step 3: Get burst onset times per electrode 
     (either from data if already calculated or use custom hilbert transform)
-  Step 4:
+  Step 4:Compute GC across entire trial
+    Use MATLAB fieldtrip toolbox and functions such as ft_mvaranalysis,ft_freqanalysis (method = 'mvar')
+    ft_connectivityanalysis (granger) to get the GC (frequency,source,matrix)
+  Step 5: Get the graph adjacency matrix
+    Compute
+    SlowGC(i,j) = ∫ GC(f,i,j) df over 30–50 Hz
+    FastGC(i,j) = ∫ GC(f,i,j) df over 60–100 Hz.
+    These may become our graph adjacency matrices.
+  Step 6: Analyse these matrices to compare network metrics.
+    
 Idea 2: Test whether slow gamma phase entrains fast gamma phase:
-
+Dataset : EEG dataset
+Toolbox: Fieldtrip (mostly)
+  Step 1: Preprocessing Data to reduce noise.
+  Step 2: Define Regions of Interest.
+    #Like Frontal-Temporal-Occiptical like in the list.
+  Step 3: Spectral decomposition
+    #To get the band specific time
    Step 4:
     For each burst extract window[-200 ms,+300ms] and separate into slow and fast burst
   Step 5: Make directed GC matrix per band.
