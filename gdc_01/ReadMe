@@ -16,7 +16,12 @@ Toolbox: MATLAB: FieldTrip + Chronux
           FastGC(i,j) = ∫ GC(f,i,j) df over 60–100 Hz.
           These may become our graph adjacency matrices.
   Step 6: Analyse these matrices to compare network metrics.
-    
+
+To calculate the Directed Asymmetry Index (DAI) maxtrix, we use the definition:
+ DAI(i,j)= [GCI(i--->j) - GCI(j--->i)]/[GCI(i--->j) + GCI(j--->i)]
+where GCI(i--->j) is the band-integrated GC value(e.g., SlowGC orr FastGC
+The DAI is computed element-wise for every pair of nodes.
+
 Aim 02: Test whether slow gamma phase entrains fast gamma phase -
 Dataset : LFP (monkey dataset)  
 Toolbox: Fieldtrip + Chronux
@@ -31,8 +36,5 @@ Toolbox: Fieldtrip + Chronux
   Step 6: Analyze the CFC and CFD by plotting heatmaps 
   Step 7: Perform (repeated measures) rmANOVA (or other appropriate statistical tests) comparing regions of interest. 
 
-To calculate the Directed Asymmetry Index (DAI) maxtrix, we use the definition:
- DAI(i,j)= [GCI(i--->j) - GCI(j--->i)]/[GCI(i--->j) + GCI(j--->i)]
-where GCI(i--->j) is your band-integrated GC value(e.g., SlowGC orr FastGC
-The DAI is computed element-wise for every pair of nodes.
+
             
