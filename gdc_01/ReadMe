@@ -3,7 +3,7 @@ Dataset : LFP(Monkey dataset)
 Toolbox: MATLAB: FieldTrip + Chronux
 
   Step 1: Preprocessing data to reduce noise (if raw data is provided).
-  Step 2: Time frequency decomposition:
+  Step 2: Time frequency decomposition (Spectral Analysis):
           Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
   Step 3: Get burst onset times per electrode 
           (either from data if already calculated or use custom hilbert transform)
@@ -22,8 +22,11 @@ Dataset : LFP (monkey dataset)
 Toolbox: Fieldtrip + Chronux
 
   Step 1: Preprocessing Data to reduce noise (if raw data is provided).
-  Step 2: Time frequency decomposition:
+  Step 2: Time frequency decomposition (Spectral Analysis):
           Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
   Step 3: Get burst onset times per electrode 
           (either from data if already calculated or use custom hilbert transform)
-  Step 4: 
+  Step 4: Calculate Phase Slope Index (PSI) to further compute Cross Frequency Directionality (CFD) (using Mutli Taper Approach)
+  Step 5: Calculate Cross Frequency Coupling (CFC) values between the 2 band ranges
+  Step 6: Analyze the CFC and CFD by plotting heatmaps 
+  Step 7: Perform (repeated measures) rmANOVA (or other appropriate statistical tests) comparing regions of interest.     
