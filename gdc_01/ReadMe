@@ -1,25 +1,29 @@
-Idea 1: Determine whether slow and fast gamma support distinct directed network architecture:
-Dataset : LFP(Monkey dataset) #(Most probably)
+Aim 01: Determine whether slow and fast gamma support distinct directed network architecture -
+Dataset : LFP(Monkey dataset)
 Toolbox: MATLAB: FieldTrip + Chronux
-  Step 1:Preprocessing data to reduce noise.
-  Step 2:Time frequency decomposition:
-    Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
+
+  Step 1: Preprocessing data to reduce noise (if raw data is provided).
+  Step 2: Time frequency decomposition:
+          Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
   Step 3: Get burst onset times per electrode 
-    (either from data if already calculated or use custom hilbert transform)
-  Step 4:Compute GC across entire trial
-    Use MATLAB fieldtrip toolbox and functions such as ft_mvaranalysis,ft_freqanalysis (method = 'mvar')
-    ft_connectivityanalysis (granger) to get the GC (frequency,source,matrix)
+          (either from data if already calculated or use custom hilbert transform)
+  Step 4: Compute GC across entire trial
+          Use MATLAB fieldtrip toolbox and functions such as ft_mvaranalysis,ft_freqanalysis (method = 'mvar')
+          ft_connectivityanalysis (granger) to get the GC (frequency,source,matrix)
   Step 5: Get the graph adjacency matrix
-    Compute
-    SlowGC(i,j) = ∫ GC(f,i,j) df over 30–50 Hz
-    FastGC(i,j) = ∫ GC(f,i,j) df over 60–100 Hz.
-    These may become our graph adjacency matrices.
+          Compute
+          SlowGC(i,j) = ∫ GC(f,i,j) df over 30–50 Hz
+          FastGC(i,j) = ∫ GC(f,i,j) df over 60–100 Hz.
+          These may become our graph adjacency matrices.
   Step 6: Analyse these matrices to compare network metrics.
     
-Idea 2: Test whether slow gamma phase entrains fast gamma phase:
-Dataset : LFP (monkey dataset) 
-Toolbox: Fieldtrip (mostly)
-  Step 1: Preprocessing Data to reduce noise.
-  Step 2: Spectral Analysis:
-    # Use fieldtrip(mtmconvol) to compute time-frequency representation(i.e just get the bands like theta...)
-   Step 3:
+Aim 02: Test whether slow gamma phase entrains fast gamma phase -
+Dataset : LFP (monkey dataset)  
+Toolbox: Fieldtrip + Chronux
+
+  Step 1: Preprocessing Data to reduce noise (if raw data is provided).
+  Step 2: Time frequency decomposition:
+          Separate band-limited time series for slow (30-50 Hz) and fast gamma(60-100 Hz)
+  Step 3: Get burst onset times per electrode 
+          (either from data if already calculated or use custom hilbert transform)
+  Step 4: 
