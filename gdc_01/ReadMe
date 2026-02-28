@@ -18,9 +18,9 @@ Toolbox: MATLAB: FieldTrip + Chronux
   Step 6: Analyse these matrices to compare network metrics.
 
 To calculate the Directed Asymmetry Index (DAI) maxtrix, we use the definition:
- DAI(i,j)= [GCI(i--->j) - GCI(j--->i)]/[GCI(i--->j) + GCI(j--->i)]
-where GCI(i--->j) is the band-integrated GC value(e.g., SlowGC orr FastGC
-The DAI is computed element-wise for every pair of nodes.
+           DAI(i,j)= [GCI(i--->j) - GCI(j--->i)]/[GCI(i--->j) + GCI(j--->i)]
+           where GCI(i--->j) is the band-integrated GC value(e.g., SlowGC or FastGC
+           The DAI will be computed element-wise for every pair of nodes.
 
 Aim 02: Test whether slow gamma phase entrains fast gamma phase -
 Dataset : LFP (monkey dataset)  
